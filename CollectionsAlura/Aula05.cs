@@ -57,8 +57,12 @@ namespace CollectionsAlura
 
       Console.WriteLine(dictionary["Teste"]);
 
+      //As chaves dos dicionários são únicas.
+      //
+      //dictionary.Add("Teste", 2);
 
-
+      Aluno fabio = new Aluno("Fabio", 55555);
+      cshapColecoes.SubstituiAluno(fabio);
     }
   }
 }

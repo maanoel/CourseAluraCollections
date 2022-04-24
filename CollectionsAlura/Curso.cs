@@ -89,6 +89,11 @@ namespace CollectionsAlura
       //throw new Exception("Matricula não encontrada");
     }
 
+    public void SubstituiAluno(Aluno aluno)
+    {
+      alunosDicionario[aluno.NumeroMatricula] = aluno;
+    }
+
     public override string ToString()
     {
       return $"Curso: {nome}, Tempo{TempoTotal}, Aulas: {string.Join(",", aulas)}";
