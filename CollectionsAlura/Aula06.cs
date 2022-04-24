@@ -45,6 +45,8 @@ namespace CollectionsAlura
       System.Console.WriteLine(sexta.Value);
       System.Console.WriteLine(sabado.Value);
 
+
+      dias.Remove("quarta"); //removeu quarta
       //quarta.Next é igual a quinta
       //quinta.Previous é igual a quarta
 
