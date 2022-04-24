@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CollectionsAlura
 {
@@ -47,6 +48,15 @@ namespace CollectionsAlura
       Console.WriteLine("alunoMatriculado" + alunoMatriculado);
 
       Aluno alunoMatriculado2 = cshapColecoes.BuscaMatriculado(5618);
+
+      Console.Clear();
+
+      IDictionary<string, int> dictionary = new Dictionary<string, int>();
+      dictionary.Add("Teste", 2);
+      dictionary["Teste"] = 3;
+
+      Console.WriteLine(dictionary["Teste"]);
+
 
 
     }
