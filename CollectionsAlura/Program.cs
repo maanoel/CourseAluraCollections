@@ -7,19 +7,19 @@ namespace CollectionsAlura
     static void Main(string[] args)
     {
       string aulaIntro = "Introdução ás coleções";
-      string aulraModelando = "Modelando a classe aula";
+      string aulaModelando = "Modelando a classe aula";
       string aulaSets = "trabalhando com conjuntos";
 
       string[] aulas = new string[] {
         aulaIntro,
-        aulraModelando,
+        aulaModelando,
         aulaSets
       };
 
       string[] aulasDois = new string[3];
 
       aulasDois[0] = aulaIntro;
-      aulasDois[1] = aulraModelando;
+      aulasDois[1] = aulaModelando;
       aulasDois[2] = aulaSets;
 
       Console.WriteLine(aulasDois);
@@ -34,6 +34,29 @@ namespace CollectionsAlura
 
       Imprimir(aulasDois);
 
+      Console.WriteLine("Aula modelando está no índice: " + Array.IndexOf(aulasDois, aulaModelando));
+      Console.WriteLine(Array.LastIndexOf(aulasDois, aulaModelando));
+
+      //Idempotência,
+      //o valor pode ser alterado várias vezes, sem modificar o valor original
+
+
+      Array.Reverse(aulasDois);
+
+      Imprimir(aulasDois);
+
+      Array.Reverse(aulasDois);
+
+      Imprimir(aulasDois);
+
+
+      Array.Resize(ref aulasDois, 2);
+
+      Imprimir(aulasDois);
+
+      Array.Resize(ref aulasDois, 3);
+
+      Imprimir(aulasDois);
     }
 
     private static void Imprimir(string[] aulasDois)
