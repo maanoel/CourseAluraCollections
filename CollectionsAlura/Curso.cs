@@ -72,7 +72,11 @@ namespace CollectionsAlura
 
     public Aluno BuscaMatriculado(int numeroMatricula)
     {
-      return alunosDicionario[numeroMatricula]; 
+      Aluno aluno = null;
+      alunosDicionario.TryGetValue(numeroMatricula, out aluno);
+
+      return aluno;
+      //return alunosDicionario[numeroMatricula]; 
       //É possível pegar a chave do dicionário utilizando os []
 
       //Sem utiliza dictionary:

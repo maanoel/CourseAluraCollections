@@ -46,6 +46,9 @@ namespace CollectionsAlura
 
       Console.WriteLine("alunoMatriculado" + alunoMatriculado);
 
+      Aluno alunoMatriculado2 = cshapColecoes.BuscaMatriculado(5618);
+
+
     }
   }
 }
