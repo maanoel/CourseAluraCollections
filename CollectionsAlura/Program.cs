@@ -57,6 +57,29 @@ namespace CollectionsAlura
       Array.Resize(ref aulasDois, 3);
 
       Imprimir(aulasDois);
+
+      aulasDois[aulasDois.Length - 1] = "Conclusão";
+
+      Array.Sort(aulasDois);
+
+      Imprimir(aulasDois);
+
+      string[] copia = new string[2];
+
+      Array.Copy(aulasDois, 1, copia, 0, 2);
+
+      Imprimir(copia);
+
+      string[] clone = aulasDois.Clone() as string[];
+      //string[]  (string[]) clone = aulasDois.Clone()
+
+      Imprimir(clone);
+
+      Array.Clear(clone, 1, 2);
+
+      Imprimir(clone);
+
+
     }
 
     private static void Imprimir(string[] aulasDois)
