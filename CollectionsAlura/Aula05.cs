@@ -1,4 +1,6 @@
-﻿namespace CollectionsAlura
+﻿using System;
+
+namespace CollectionsAlura
 {
   public class Aula05
   {
@@ -21,19 +23,29 @@
       //Imprimindo alunos matriculados
       foreach (var aluno in cshapColecoes.Alunos)
       {
-        System.Console.WriteLine(aluno);
+        Console.WriteLine(aluno);
       }
 
-      System.Console.WriteLine($"O aluno aluno1 {aluno01.Nome} está matriculado?");
+      Console.WriteLine($"O aluno aluno1 {aluno01.Nome} está matriculado?");
 
-      System.Console.WriteLine(cshapColecoes.EstaMatriculado(aluno01));
+      Console.WriteLine(cshapColecoes.EstaMatriculado(aluno01));
 
       Aluno aluno04 = new Aluno("Rafaela Moura", 55555);
-      System.Console.WriteLine(cshapColecoes.EstaMatriculado(aluno04));
+      Console.WriteLine(cshapColecoes.EstaMatriculado(aluno04));
 
-      System.Console.WriteLine(aluno03 == aluno04);
+      Console.WriteLine(aluno03 == aluno04);
 
-      System.Console.WriteLine(aluno03.Equals(aluno04));
+      Console.WriteLine(aluno03.Equals(aluno04));
+
+      Console.Clear();
+
+
+      Console.WriteLine("Quem é o aluno com a matricula 55555?");
+
+      Aluno alunoMatriculado = cshapColecoes.BuscaMatriculado(55555);
+
+      Console.WriteLine("alunoMatriculado" + alunoMatriculado);
+
     }
   }
 }

@@ -11,8 +11,12 @@ namespace CollectionsAlura
     private string instrutor;
     private List<Aula> aulas;
     private ISet<Aluno> alunos = new HashSet<Aluno>();
-    public IList<Aluno> Alunos {
-      get {
+    private IDictionary<int, Aluno> alunosDicionario = new Dictionary<int, Aluno>();
+
+    public IList<Aluno> Alunos
+    {
+      get
+      {
         return new ReadOnlyCollection<Aluno>(alunos.ToList());
       }
     }
@@ -37,6 +41,7 @@ namespace CollectionsAlura
 
     public void Matricula(Aluno aluno)
     {
+      alunosDicionario.Add(aluno.NumeroMatricula, aluno);
       alunos.Add(aluno);
     }
 
@@ -63,6 +68,21 @@ namespace CollectionsAlura
     public void Adiciona(Aula aula)
     {
       this.aulas.Add(aula);
+    }
+
+    public Aluno BuscaMatriculado(int numeroMatricula)
+    {
+      return alunosDicionario[numeroMatricula]; 
+      //É possível pegar a chave do dicionário utilizando os []
+
+      //Sem utiliza dictionary:
+      //foreach (var aluno in alunos)
+      //{
+      //  if (aluno.NumeroMatricula == numeroMatricula)
+      //    return aluno;
+      //}
+
+      //throw new Exception("Matricula não encontrada");
     }
 
     public override string ToString()
