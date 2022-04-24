@@ -20,6 +20,11 @@ namespace CollectionsAlura
       Imprimir(aulas);
       aulas.Sort();
 
+      Imprimir(aulas);
+
+      aulas.Sort((este, outro) => este.Tempo.CompareTo(outro.Tempo));
+
+      Imprimir(aulas);
     }
 
     private static void Imprimir(List<Aula> aulas)
