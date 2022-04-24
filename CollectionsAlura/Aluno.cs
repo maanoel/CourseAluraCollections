@@ -26,5 +26,14 @@
     {
       return $"Nome: {nome} matricula: {numeroMatricula}";
     }
+
+    public override bool Equals(object obj)
+    {
+      var outro = obj as Aluno;
+
+      if (outro == null) return false;
+
+      return this.nome.Equals(outro.Nome);
+    }
   }
 }

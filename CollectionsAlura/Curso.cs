@@ -46,6 +46,11 @@ namespace CollectionsAlura
       set { instrutor = value; }
     }
 
+    public bool EstaMatriculado(Aluno aluno01)
+    {
+      return alunos.Contains(aluno01);
+    }
+
     public int TempoTotal
     {
       get

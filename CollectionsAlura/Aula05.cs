@@ -23,6 +23,17 @@
       {
         System.Console.WriteLine(aluno);
       }
+
+      System.Console.WriteLine($"O aluno aluno1 {aluno01.Nome} está matriculado?");
+
+      System.Console.WriteLine(cshapColecoes.EstaMatriculado(aluno01));
+
+      Aluno aluno04 = new Aluno("Rafaela Moura", 55555);
+      System.Console.WriteLine(cshapColecoes.EstaMatriculado(aluno04));
+
+      System.Console.WriteLine(aluno03 == aluno04);
+
+      System.Console.WriteLine(aluno03.Equals(aluno04));
     }
   }
 }
