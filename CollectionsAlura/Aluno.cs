@@ -27,6 +27,8 @@
       return $"Nome: {nome} matricula: {numeroMatricula}";
     }
 
+    //Sempre que implementar o equals,
+    //devemos implementar também o GetHashCode
     public override bool Equals(object obj)
     {
       var outro = obj as Aluno;
@@ -34,6 +36,11 @@
       if (outro == null) return false;
 
       return this.nome.Equals(outro.Nome);
+    }
+
+    public override int GetHashCode()
+    {
+      return this.nome.GetHashCode();
     }
   }
 }
