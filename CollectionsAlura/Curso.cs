@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -9,6 +10,13 @@ namespace CollectionsAlura
     private string nome;
     private string instrutor;
     private List<Aula> aulas;
+    private ISet<Aluno> alunos = new HashSet<Aluno>();
+    public IList<Aluno> Alunos {
+      get {
+        return new ReadOnlyCollection<Aluno>(alunos.ToList());
+      }
+    }
+
     public IList<Aula> Aulas
     {
       get { return new ReadOnlyCollection<Aula>(aulas); }
@@ -27,6 +35,10 @@ namespace CollectionsAlura
       set { nome = value; }
     }
 
+    public void Matricula(Aluno aluno)
+    {
+      alunos.Add(aluno);
+    }
 
     public string Instrutor
     {
