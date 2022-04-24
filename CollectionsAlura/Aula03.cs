@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CollectionsAlura
 {
@@ -25,41 +24,35 @@ namespace CollectionsAlura
       aulas.Sort((este, outro) => este.Tempo.CompareTo(outro.Tempo));
 
       Imprimir(aulas);
+
+
+      System.Console.WriteLine("****************************");
+      Curso csharpColecoes = new Curso("C# Collections", "Vitor");
+      csharpColecoes.Adiciona(new Aula("Trabalhando com Listas", 21));
+
+      Imprimir(csharpColecoes.Aulas);
+
+      csharpColecoes.Adiciona(new Aula("Criando uma aula", 20));
+      csharpColecoes.Adiciona(new Aula("Modelando com coleções", 19));
+
+      Imprimir(csharpColecoes.Aulas);
+      
+      List<Aula> aulasCopiadas = new List<Aula>(csharpColecoes.Aulas);
+
+      aulasCopiadas.Sort();
+
+      Imprimir(aulasCopiadas);
+
+      System.Console.WriteLine(csharpColecoes.TempoTotal);
+
     }
 
-    private static void Imprimir(List<Aula> aulas)
+    private static void Imprimir(IList<Aula> aulas)
     {
       foreach (var aula in aulas)
       {
         System.Console.WriteLine(aula);
       }
-    }
-  }
-
-  class Aula : IComparable
-  {
-    private string titulo;
-    private int tempo;
-
-    public Aula(string titulo, int tempo)
-    {
-      this.titulo = titulo;
-      this.tempo = tempo;
-    }
-
-    public string Titulo { get => titulo; set => titulo = value; }
-    public int Tempo { get => tempo; set => tempo = value; }
-
-    public int CompareTo(object obj)
-    {
-      Aula aula = obj as Aula;
-
-      return titulo.CompareTo(aula.titulo);
-    }
-
-    public override string ToString()
-    {
-      return $"[titulo:{Titulo} , tempo: {Tempo}]";
     }
   }
 }
