@@ -10,9 +10,7 @@
       //new Aula04().Executando();
       //new Aula05().Executando();
       //new Aula06().Executando();
-
-      new Aula06().Executando();
-
+      new Aula07().Executando();
     }
   }
 }
