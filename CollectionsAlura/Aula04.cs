@@ -48,14 +48,19 @@ namespace CollectionsAlura
       //são mais rápido do que as listas
       //
 
-    }
+      //HashSet consome mais memória que uma lista
+      //HashSet permite melhor
+      ////desempenho quando utilizando muitos dados
+      ///
 
-    private static void Imprimir(IList<Aula> aulas)
-    {
-      foreach (var aula in aulas)
-      {
-        System.Console.WriteLine(aula);
-      }
+      //Para ordernar um conjunto eu
+      //posso transformar ele em uma lista e depois ordernar
+
+      List<string> alunosEmLista = new List<string>(alunos);
+      alunosEmLista.Sort();
+
+      System.Console.WriteLine(string.Join(",", alunosEmLista));
+
     }
   }
 }
